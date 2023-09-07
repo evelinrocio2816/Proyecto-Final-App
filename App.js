@@ -48,6 +48,9 @@ export default function App() {
     setItemsList(arr)
     setModalVisible(false)
   }
+  const hideModal = () => {
+    setModalVisible(false) 
+  }
 
   const onHandleModal = index => {
     setModalVisible(true)
@@ -73,7 +76,7 @@ export default function App() {
           keyExtractor={item => item.id}
         />
       </View>
-      <Modal modalVisible={modalVisible} onHandleDelete={onHandleDelete} />
+      <Modal modalVisible={modalVisible} onHandleDelete={onHandleDelete} hideModal={hideModal}/>
     </View>
   )
 }
